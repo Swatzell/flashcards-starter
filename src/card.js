@@ -1,3 +1,4 @@
+
 function createCard (id,question,answers,correctAnswer) {
 var card = {
     id:id,
@@ -27,13 +28,7 @@ function countCards(deck){
 return deck.length
 }
 
-function takeTurn(guess, round) {
-    round.turns += 1;
-    if (evaluateGuess(guess,round.currentCard) === 'incorrect'){
-        round.incorrectGuesses.push(round.currentCard.id)
-    }
-    round.currentCard = round.deck[round.turns]
-}
+
 
 function calculatePercentCorrect(round) {
     const totalTurns = round.turns;
@@ -48,9 +43,6 @@ module.exports = {
     createCard,
     evaluateGuess,
     createDeck,
-    createRound,
-    takeTurn,
     calculatePercentCorrect,
-    endRound,
     countCards
 }

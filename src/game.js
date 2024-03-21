@@ -1,13 +1,9 @@
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
-const { createCard,
-  evaluateGuess,
-  createDeck,
-  createRound,
-  takeTurns,
-  calculatePercentCorrect,
-  endRound, countCards} = require('./card')
+const {
+  createDeck, countCards} = require('./card')
+  const {createRound} = require('./round')
 
 function printMessage(deck) {
   console.log(`Welcome to FlashCards! You are playing with ${countCards(deck)} cards.
