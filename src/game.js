@@ -7,7 +7,7 @@ const { createCard,
   createRound,
   takeTurns,
   calculatePercentCorrect,
-  endRound} = require('./card')
+  endRound, countCards} = require('./card')
 
 function printMessage(deck) {
   console.log(`Welcome to FlashCards! You are playing with ${countCards(deck)} cards.
@@ -18,4 +18,11 @@ function printQuestion(round) {
   util.main(round);
 }
 
-module.exports = { printMessage, printQuestion };
+function start(deck) {
+const round = createRound(deck);
+createDeck(deck);
+printMessage(deck);
+printQuestion(round);
+}
+
+module.exports = { printMessage, printQuestion, start };
