@@ -22,16 +22,6 @@ var deck = cards
 return deck
 }
 
-function createRound(deck){
-var round = {
-    deck:deck,
-    currentCard:deck[0],
-    turns:0,
-    incorrectGuesses:[]
-
-}
-return round
-}
 
 function countCards(deck){
 return deck.length
@@ -52,10 +42,7 @@ function calculatePercentCorrect(round) {
     return Math.ceil(percentage);
    }
    
-   function endRound(round) {
-    const percentCorrect = calculatePercentCorrect(round);
-    return `** Round over! ** You answered ${percentCorrect}% of the questions correctly!`}
-
+  
  
 module.exports = {
     createCard,
