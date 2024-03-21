@@ -1,3 +1,4 @@
+
 function createCard (id,question,answers,correctAnswer) {
 var card = {
     id:id,
@@ -16,29 +17,18 @@ function evaluateGuess(guess,card){
 }
 }
 
+
 function createDeck(cards){
 var deck = cards
 return deck
 }
 
-function createRound(deck){
-var round = {
-    deck:deck,
-    currentCard:deck[0],
-    turns:0,
-    incorrectGuesses:[]
 
-}
-return round
+function countCards(deck){
+return deck.length
 }
 
-function takeTurns(guess, round) {
-    round.turns += 1;
-    if (evaluateGuess(guess,round.currentCard) === 'incorrect'){
-        round.incorrectGuesses.push(round.currentCard.id)
-    }
-    round.currentCard = round.deck[round.turns]
-}
+
 
 function calculatePercentCorrect(round) {
     const totalTurns = round.turns;
@@ -47,16 +37,12 @@ function calculatePercentCorrect(round) {
     return Math.ceil(percentage);
    }
    
-   function endRound(round) {
-    const percentCorrect = calculatePercentCorrect(round);
-    return `** Round over! ** You answered ${percentCorrect}% of the questions correctly!`}
-
+  
+ 
 module.exports = {
     createCard,
     evaluateGuess,
     createDeck,
-    createRound,
-    takeTurns,
     calculatePercentCorrect,
-    endRound
+    countCards
 }

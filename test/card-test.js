@@ -1,7 +1,8 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const { createCard,evaluateGuess,createDeck,createRound,takeTurns,calculatePercentCorrect,endRound} = require('../src/card');
+const { createCard,evaluateGuess,createDeck,calculatePercentCorrect} = require('../src/card');
+const {endRound,createRound,takeTurn} = require('../src/round')
 
 describe('card', function() {
   it('should be a function', function() {
@@ -90,47 +91,47 @@ describe('take turns',function(){
   })
 
   it('should be a function',function(){
-    expect(takeTurns).to.be.a('function')
+    expect(takeTurn).to.be.a('function')
   });
   it('should update the turn count when a guess is made',function(){   
-    takeTurns('sea otter', round);
+    takeTurn('sea otter', round);
     expect(round.turns).to.equal(1);
-    takeTurns('appendix', round);
+    takeTurn('appendix', round);
     expect(round.turns).to.equal(2);
   })
   it('should have next card become current card', function(){
-    takeTurns('gallbladder', round);
+    takeTurn('gallbladder', round);
     expect(round.currentCard.id).to.equal(2)
   })
 
 it('should have next card become current card after each guess',function(){
-    takeTurns('sea otter', round);
+    takeTurn('sea otter', round);
     expect(round.currentCard.id).to.equal(2)
-    takeTurns('appendix', round);
+    takeTurn('appendix', round);
     expect(round.currentCard.id).to.equal(3)
 })
 
 it('should update entire card after guess',function(){
-  takeTurns('sea otter', round);
+  takeTurn('sea otter', round);
   expect(round.currentCard).to.equal(round.deck[1])
 })
 
 it('should evaluate if a guess is wrong and store it in an array',function(){
-  takeTurns('turing', round);
+  takeTurn('turing', round);
   expect(round.incorrectGuesses).to.deep.equal([round.deck[0].id]);
 
 })
 it('should calculate percentage of correct guesses', function() {
-  takeTurns('sea otter', round); 
-  takeTurns('appendix', round);
-  takeTurns('playing with bubble wrap', round); 
+  takeTurn('sea otter', round); 
+  takeTurn('appendix', round);
+  takeTurn('playing with bubble wrap', round); 
   expect(calculatePercentCorrect(round)).to.equal(67);
 });
 
 it('should return a message indicating the end of the round with the percentage of correct answers', function() {
-  takeTurns('sea otter', round);
-  takeTurns('appendix', round); 
-  takeTurns('playing with bubble wrap', round);
+  takeTurn('sea otter', round);
+  takeTurn('appendix', round); 
+  takeTurn('playing with bubble wrap', round);
   const result = endRound(round);
   expect(result).to.equal(`** Round over! ** You answered 67% of the questions correctly!`);
 });
