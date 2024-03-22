@@ -1,58 +1,29 @@
-# FlashCards Starter Kit
+# FlashCards Game
 
-## Fork This Repo
+## Abstract:
 
-On the top right corner of this page, click the **Fork** button.
+I developed a program to simulate a set of flash cards through the command line! A user can see the questions, take guesses, and see a final score at the end of the round.
 
-## Setup
+## Installation Instructions:
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+Access the form here: https://github.com/Swatzell/flashcards-starter Copy the SSH repository URL git@github.com:Swatzell/flashcards-starter.git Open terminal and 'cd' into the directory you wish to clone. Clone the repository by submitting git clone git@github.com:Swatzell/flashcards-starter.git
 
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
+## Preview of app:
+![Screenshot 2024-03-21 at 5 04 00 PM](https://github.com/Swatzell/flashcards-starter/assets/59072840/abc65975-22b2-4e9d-8a10-e40317065207)
+## Context:
 
-Once you have cloned the repo, change into the directory and install the library dependencies using the command:
+The project was assigned on Monday, March 18th. The majority of the iterations were completed by Thursday, March 21st after committing all day tuesday,wednesday and thursday.
 
-```bash
-npm install
-```
+## Contributers:
 
-To verify that it is setup correctly, run `npm test` in your terminal. You should have skipped tests in your `card` test file show up.
+David Swatzell: https://github.com/Swatzell
 
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
+## Learning Goals:
+Contribute code to an partially constructed application,
+Follow spec/prompts to make a working application,
+Write modular, reusable code that follows SRP (Single Responsibility Principle) and 
+Implement a robust testing suite using TDD
 
-```bash
-Your project is running...
-```
+## Wins + Challenges:
 
-*Note that you will not need to you run this file until you are running your `game` file in Iteration 3. Prior to that, you should strive to use TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
-
-
-## Where to Add Your Code
-
-**Create all of your feature code files in the `src` directory.** Use the `module.exports` and `require` syntax to share code across files.
-
-## How to View Your Code in Action
-
-Once you are working through Iteration 3, you will want to run the `node index.js` command in your terminal to run the game.
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `card-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
+A big take away for this project for me was always read through every file before starting anything. I immediately started tackling testing and then when it came to implementation of the actual code to make the project work I realized it wanted me to make a seperate JS file for rounds and it also wanted certain functions done certain ways so lesson learned to always read through everything before starting. A big win was initially getting every test to pass. Once I realized I had to start moving functions around and modifying toward the end I might have made some no longer pass but I was running out of time. Either way overall this was a really great learning experience and a great first time working with TDD.
